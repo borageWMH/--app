@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>daoway</title>
+
+    <link rel="stylesheet" href="../bootstrap.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <!--   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+</head>
+<body>
+<div ng-view="" class="ng-scope">
+    <div class="container ng-scope">
+    <div class="regist">
+        <div class="content">
+            <h2>注册</h2>
+            <div class="control-group">
+                <div class="input">
+                    <!--<span class="input-group-addon icon-1"><i class="fa fa-user"></i></span>-->
+                    <input class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" maxlength="11" type="text" ng-model="phone" placeholder="请输入手机号" onkeyup="value=value.replace(/\D/g,'')">
+
+                    <div class="input-group">
+                        <img style="height:50px;width: 100%;border: 1px solid #ccc;" ng-src="/daoway/rest/kaptcha/code.jpg" ng-click="getVerifyCode()" src="/daoway/rest/kaptcha/code.jpg">
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" maxlength="4" ng-model="verify_code" placeholder="请输入图片中的字符串">
+                        <span class="input-group-addon" ng-click="getVerify()" style="cursor:pointer" ng-show="isVerify">获取验证码</span>
+                        <span class="input-group-addon ng-binding ng-hide" ng-show="!isVerify">重新发送60</span>
+                    </div>
+                    <input type="text" style="margin: 10px 0;" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" maxlength="4" ng-model="verify" placeholder="请输入验证码" onkeyup="value=value.replace(/\D/g,'')">
+                    <input class="form-control ng-pristine ng-untouched ng-valid" ng-model="password" type="password" id="password" placeholder="请输入密码">
+                </div>
+            </div>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="vehicle" value="Car" ng-checked="isChecked" ng-model="isChecked" class="ng-pristine ng-untouched ng-valid">
+                <a href="partials/reg.html" target="_Blank">您确认并同意到位用户协议</a>
+            </label>
+        </div>
+        <br>
+        <div ng-class="{'info': 'alert alert-info', 'error': 'alert alert-danger'}[isActive]" role="alert" ng-show="registError" class="ng-binding ng-hide">
+            <button type="button" class="close" ng-click="cleanErrorMsg()">
+                <span aria-hidden="true">×</span>
+            </button>
+
+        </div>
+        <div class="zhuce">
+            <!--<a class="btn btn-warning btn-lg" ng-href="#/regist">注册</a>-->
+            <button class="btn btn-primary btn-lg btn-block" ng-enter="doRegist()" ng-click="doRegist()">注册</button>
+        </div>
+        <div style="padding: 20px;">
+            <a style="margin-left: 80px" ng-href="#/login" href="#/login">已有账户？登录</a>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+<script>
+
+</script>
+</html>
