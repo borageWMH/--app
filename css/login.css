@@ -9,13 +9,13 @@ body {
     overflow-x: hidden;
 }
 
-.container {
+.container1 {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
-.login {
+.login1 {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
@@ -24,7 +24,7 @@ body {
     background: #fff;
     border: 1px #ccc solid;
 }
-.login h2 {
+.login1 h2 {
     background: url(../img/houtai-logo.png) center no-repeat;
     height: 70px;
     line-height: 70px;
@@ -39,7 +39,7 @@ body {
     border-collapse: separate;
 
 }
-.login .form-control {
+.login1 .form-control {
     position: relative;
     height: auto;
     padding: 15px;

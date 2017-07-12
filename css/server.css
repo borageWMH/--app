@@ -1,110 +1,4 @@
 
-* {
-    margin: 0;
-    padding: 0;
-}
-/*头部*/
-.wrapper{
-    width: 100%;
-}
-a{
-    text-decoration: none;
-}
-
-li{
-    list-style: none;
-}
-.header{
-    width: 100%;
-    border-bottom: 1px solid #dbdbdb;
-    position: fixed;
-    z-index: 1000000;
-    background: rgba(255,255,255,0.88);
-}
-.wrapper .container{
-    width: 1200px;
-    height: 65px;
-    margin: 0 auto;
-
-
-}
-.wrapper .container .c-left{
-    height: 40px;
-    display: inline-block;
-}
-.wrapper .container .c-left>img{
-    height: 42px;
-    vertical-align: middle;
-    margin-top: -17px;
-}
-.wrapper .container .c-center{
-    height: 40px;
-    line-height: 40px;
-    display: inline-block;
-    margin-left: 160px;
-}
-
-.wrapper .container .c-center img{
-    vertical-align: middle;
-    margin-top: -10px;
-}
-
-.wrapper .container .c-right a:hover{
-    text-decoration: none;
-    color:  #e94840;
-}
-.wrapper .container .c-right #showCity{
-    margin-right: 5px;
-    margin-left: -33px;
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
-}
-.wrapper .container .c-right #city{
-    margin-right: 65px;
-    margin-left: -46px;
-}
-
-.wrapper .container .c-right li{
-    float: left;
-    margin-left: 33px;
-}
-.wrapper .container .c-right{
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 65px;
-}
-.wrapper .container .c-right li a{
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
-}
-.wrapper .container .c-right #lastLi{
-    position: relative;
-}
-.wrapper .container .c-right #lastLi a {
-    background: #e94840;
-    display: block;
-    position: absolute;
-    height: 30px;
-    width: 75px;
-    color: white;
-    top: 18px;
-    text-align: center;
-    border-radius: 5px;
-
-}
-.wrapper .container .c-right li #first{
-    color:#e94840 ;
-}
-.wrapper .container .c-right #lastLi>a span{
-    position: relative;
-    top: -18px;
-    display: inline-block;
-}
-
-
-
 /* 中间样式*/
 .middle{
     width: 100%;
@@ -118,17 +12,14 @@ li{
     font-size: 18px;
     font-weight: bold;
     position: relative;
-    top: 65px;
-    bottom: 65px;
-    overflow: hidden;
+
 
 }
-.service-center {
+.service-center1 {
     width: 1200px;
     margin: 0 auto;
-    position: relative;
     overflow: hidden;
-    top: 65px;
+
 }
 .centerleft {
     width: 970px;
@@ -202,96 +93,6 @@ li{
 }
 #jiameng img{
     margin-top: 10px;
-}
-
-
-
-
-/*footer*/
-.baozhang{
-    text-align: center;
-    width: 100%;
-    padding-top: 60px;
-    background: #fff;
-    clear: both;
-
-}
-#baozhang h2 {
-    font-size: 28px;
-    font-family: "微软雅黑";
-    font-weight: 800;
-}
-#baozhang h2 span {
-    color: #fb474f;
-}
-#baozhang p {
-    font-size: 20px;
-    color: #3d3838;
-    margin: 0;
-}
-.servi ul li {
-    width: 33%;
-    float: left;
-    text-align: center;
-    color: #1d1515;
-    font-size: 18px;
-}
-.footer dl {
-    width: 1200px;
-    margin: 0 auto;
-}
-.footer {
-    width: 100%;
-    clear: both;
-    padding-top: 50px;
-    height: 160px;
-    background: #fff;
-    display: block;
-}
-.footer dl dt {
-    float: left;
-    font-family: " 微软雅黑";
-}
-.footer dl dd {
-    margin-left: 40px;
-    width: 1100px;
-    line-height: 30px;
-    float: left;
-}
-dt {
-    font-weight: 700;
-    display: block;
-}
-dd, dt {
-    line-height: 1.42857143;
-}
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.footer dl dd i {
-    font-size: 16px;
-    color: #898989;
-    display: inline-block;
-    width: 9%;
-    text-align: center;
-    font-weight: 200;
-    cursor: pointer;
-    font-family: "微软雅黑";
-    font-style: normal;
-}
-.beian {
-    width: 100%;
-    height: 130px;
-    text-align: center;
-    padding-top: 50px;
-    background: #fbf8f8;
-}
-.beian p {
-    color: #898989;
-    margin: 0 0 1.5em;
-
 }
 
 
