@@ -26,6 +26,11 @@ angular.module('myApp',['ui.router'])//创建模块对象
             templateUrl : 'html/login.html',
             controller: 'loginCtrl'
             })
+            .state('register',{
+                url : '/login',
+                templateUrl : 'html/login.html',
+                controller: 'registerCtrl'
+            })
 
         $urlRouterProvider.otherwise('/main');
     }])
@@ -74,6 +79,9 @@ angular.module('myApp',['ui.router'])//创建模块对象
 
     }])
     .controller('loginCtrl',  function ($scope, $http) {
+
+    })
+    .controller('registerCtrl',  function ($scope, $http) {
 
     })
     .controller('MyCtrl',  function ($scope, $http) {

@@ -8,7 +8,9 @@ body {
     min-height: 100%;
     overflow-x: hidden;
 }
-
+.content1 h2{
+    width: 295px;
+}
 .container1 {
     padding-right: 15px;
     padding-left: 15px;
@@ -76,6 +78,9 @@ body {
 }
 #password{
     margin-left: 39px;
+    width: 259px;
+}
+#username{
     width: 259px;
 }
 .input-group .icon-2 i{

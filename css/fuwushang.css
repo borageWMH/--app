@@ -8,7 +8,7 @@
 
 
 
-.middle{
+.middle2{
     width: 100%;
 }
 
@@ -17,7 +17,7 @@
     margin: 10px auto 0;
     background: #fff;
     position: relative;
-    top: 75px;
+    /*top: 55px;*/
 }
 .htit-left b {
     font-size: 36px;
@@ -73,7 +73,6 @@ em {
     line-height: 40px;
     background: #323434;
     clear: both;
-    margin-top: 75px;
 }
 .content{
     overflow: hidden;
