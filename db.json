@@ -4,6 +4,7 @@
       "name" : "宜生到家",
       "id" : 1,
       "img" : "http://img.daoway.cn/img/2017/01/20/c3a2490e-04fc-43de-9a05-8a62dce47f57_thumb.jpg",
+      "imgSmall" : "http://img.daoway.cn/img/2015/05/29/8a6352fd-9f05-457f-b794-777dd92f350d.jpg",
       "sales" : 11910,
       "goodRate" : 86,
       "details" : {
@@ -194,6 +195,7 @@
       "name" : "云家政",
       "id" : 2,
       "img" : "http://img.daoway.cn/img/2016/12/28/5cf8680f-0264-4686-ba05-145700db6063_thumb.jpg",
+      "imgSmall" : "http://img.daoway.cn/img/6bbc9d19-c2b0-4e70-8a5c-8e6d3ca3abd3.jpg",
       "sales" : 26791,
       "goodRate" : 86,
       "details" : {
@@ -395,6 +397,7 @@
       "name" : "三鼎家政 ",
       "id" : 3,
       "img" : "http://img.daoway.cn/img/2016/08/24/94117c68-1048-473b-8370-dc40ab66c3e0_thumb.jpg",
+      "imgSmall" :"http://img.daoway.cn/img/2016/08/24/669626f9-56bd-4c39-b697-e449f43fb513.jpg",
       "sales" : 2691,
       "goodRate" : 96,
       "details" : {
@@ -596,6 +599,7 @@
       "name" : "蓝犀牛",
       "id" : 4,
       "img" : "http://img.daoway.cn/img/2016/11/11/450b3aac-c628-4e2f-bed0-331b47136f5b_thumb.jpg",
+      "imgSmall" :"http://img.daoway.cn/img/2016/11/25/2bdbc7ec-a712-4fae-868e-2457566e54cb.jpg",
       "sales" : 11910,
       "goodRate" : 86,
       "details" : {
@@ -786,6 +790,7 @@
       "name" : "哈喽维修 ",
       "id" : 5,
       "img" : "http://img.daoway.cn/img/2016/06/21/6441ca7d-cd34-4474-870d-2ee9180232f6_thumb.jpg",
+      "imgSmall" : "http://img.daoway.cn/img/2016/05/26/2ec89206-be1d-45a3-94e0-c3e8affd930d.jpg",
       "sales" : 291,
       "goodRate" : 66,
       "details" : {
@@ -989,6 +994,7 @@
       "name" : "家庭保洁",
       "type" : 1,
       "projects2" :["小时工","开荒保洁","擦玻璃","深度保洁","家居养护","杀虫灭鼠"]
+
     },
     {
       "name" : "上门按摩",
