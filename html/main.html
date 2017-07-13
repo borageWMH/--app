@@ -33,7 +33,7 @@
         <div class="banner-nav">
             <div class="ulList">
                 <ul>
-                    <li class="navname" ng-repeat="project in projects">
+                    <li class="navname" ng-repeat="project in projects" ng-style="myObj">
                         <a href="/fuwu?category=20" target="_blank"></a><i>{{project.name}}</i>
                         <img src="img/right.png" class="act1">
                         <img src="img/icon1.png" class="act2">
@@ -58,7 +58,7 @@
                                 <a href="/fuwu?category=20" style="color: #898989; font-size: 18px">更多服务&gt;</a></span>
                     </div>
                     <div class="row">
-                        <a class="form-group shopList" href="/detail" ng-repeat="seller in sellers">
+                        <a class="form-group shopList" href="/detail" ng-repeat="seller in sellers" id="a1">
                             <div class="col-md-3 col-xs-6 member-container ServiceBorder">
                                 <img ng-src={{seller.img}} class="serviceImg" width="210px" height="210px">
                                 <div class="serviceName">{{seller.name}}</div>

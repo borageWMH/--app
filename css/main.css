@@ -47,10 +47,12 @@ ul, li {
     z-index: 998;
 }
 .banner-nav .ulList{
-    width: 180px;
-    position: absolute;
-    left: -470px;
+   /* width: 180px;
+    !*position: absolute;*!
+    left: -470px;*/
+    position: relative;
     top: 20px;
+    left: -470px;
 }
 .banner-nav ul {
     width: 180px;
@@ -63,16 +65,16 @@ ul, li {
     line-height: 42px;
     color: #fff;
     font-size: 16px;
-    position: relative;
+    /*position: relative;*/
     font-weight: bold;
     cursor: pointer;
     padding-left: 45px;
 }
 .banner-nav ul li .navname2{
     display: none;
-    position: fixed;
-    top: 65px;
-    left: 286px;
+    position: absolute;
+    top: 0px;
+   /* left: 286px;*/
 }
 .banner-nav ul .navname:hover .navname2{
     display: block;
@@ -216,6 +218,10 @@ a:hover, a:focus {
     margin-top: 10px;
     margin-left: 0;
     margin-right: 0;
+}
+#a1{
+    overflow: hidden;
+    display: inline-block;
 }
 .form-group {
     position: relative;

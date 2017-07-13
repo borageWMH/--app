@@ -3,15 +3,15 @@
         <div class="htit">
             <div class="htit-center">
                 <div class="htit-left">
-                    <b>宜生到家</b>
-                    <i>营业时间：<em>08:30-23:00</em></i>
-                    <i>最近可预约时间：<em>07月10日 22:00</em></i>
+                    <b>{{seller.name}}</b>
+                    <i>营业时间：<em>{{seller.details.time}}</em></i>
+                    <i>最近可预约时间：<em>{{seller.details.time2}}</em></i>
                 </div>
                 <div class="htit-right">
                     <ul>
-                        <li><i>11910</i>成功接单<em>|</em></li>
-                        <li><i>99%</i>接单率<em>|</em></li>
-                        <li><i>98%</i>好评率</li>
+                        <li><i>{{seller.sales}}</i>成功接单<em>|</em></li>
+                        <li><i>{{seller.salesRate}}%</i>接单率<em>|</em></li>
+                        <li><i>{{seller.goodRate}}%</i>好评率</li>
                     </ul>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 </h3>
                 <div class="boxtab xianshi">
 
-                    <div id="2434418" class="ctop ctopH" style="height: 200px;" ng-repeat="serviceItem in serviceItems">
+                    <div class="ctop ctopH" style="height: 200px;" ng-repeat="serviceItem in serviceItems" ui-sref="detail({id2:serviceItem.id})">
                         <img class="pic" ng-src={{serviceItem.img}} width="150" height="150">
                         <span class="spm spm2">
                         <i>{{serviceItem.name}}</i>
@@ -60,304 +60,34 @@
                     <span class="paihang"><i class="activity" style="color: #121212; margin: 0">商家简介</i></span>
                 </h3>
 
-                <div class="company">北京宜生健康科技有限公司<img src="./img/renzheng.jpg"></div>
+                <div class="company">{{seller.details.rage}}<img src="./img/renzheng.jpg"></div>
 
-                <p id="profile" class="profile" innertext="宜生到家”是国内领先的互联网+大健康O2O创新企业，以“中医外治法联合调理，个性化管理服务”做为切入点，通过富侨30年积累的品牌影响力及技师团队，宜生到家快速进行渠道资源整合及产品架构完善，不到半年时间将技师团队从不足百人扩充到600余人，研发出中医推拿、足疗spa、小儿推拿三大系列三十余种产品，成为领域内推拿师人数最多、服务品类最多的平台，塑造了上门推拿行业内最高服务标准。">宜生到家”是国内领先的互联网+大健康O2O创新企业，以“中医外治法联合调理，个性化管理服务”做为切入点，通过富侨30年积累的品牌影响力及技师团队，宜生到家快速进行渠道资源整合及产品架构完善，不到半年时间将技师团队从不足百人扩充到600余人，研发出中医推拿、足疗spa、小儿推拿三大系列三十余种产品，成为领域内推拿师人数最多、服务品类最多的平台，塑造了上门推拿行业内最高服务标准。</p>
+                <p id="profile" class="profile"
+                   innertext="宜生到家”是国内领先的互联网+大健康O2O创新企业，以“中医外治法联合调理，个性化管理服务”做为切入点，通过富侨30年积累的品牌影响力及技师团队，宜生到家快速进行渠道资源整合及产品架构完善，不到半年时间将技师团队从不足百人扩充到600余人，研发出中医推拿、足疗spa、小儿推拿三大系列三十余种产品，成为领域内推拿师人数最多、服务品类最多的平台，塑造了上门推拿行业内最高服务标准。">{{seller.details.content}}</p>
                 <div style="width: 100%; border-top: 10px solid #f8f8f8"></div>
                 <h3 style="width: 95%; border: none; border-bottom: 1px solid #e5e5e5; margin-left: 3%;">
-                    <span class="paihang"><i class="activity" style="color: #121212; margin: 0">用户评论</i><em style="color: #121212; margin-left: 15px">(3035条评论)</em></span>
+                    <span class="paihang"><i class="activity" style="color: #121212; margin: 0">用户评论</i><em style="color: #121212; margin-left: 15px">({{seller.users.length}}条评论)</em></span>
                 </h3>
                 <div id="commentDiv">
 
-                    <div class="conmentss">
+                    <div class="conmentss" ng-repeat="user in seller.users">
                         <img class="touxiang" src="" width="40" height="40">
                         <ul>
-                            <li>天涯倦客123</li>
+                            <li>{{user.username}}</li>
                             <li>
                         <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
+                            <!--ng-repeat="score in user.score" -->
 
                                       <img src="./img/red_star.png" width="10px" height="auto">
 
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-10</em>
+                            </span></span><em style="margin-left: 10px">{{user.time}}</em>
                             </li>
-                            <li class="commentdetail">准时到达，服务专业，态度热情，手法很好，全身轻松</li>
+                            <li class="commentdetail">{{user.judge}}</li>
                             <li class="commentimg">
 
                             </li>
 
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">北京  昌平区</li>
-
-                        </ul>
-                    </div>
-
-                    <div class="conmentss">
-                        <img class="touxiang" src="" width="40" height="40">
-                        <ul>
-                            <li>u15711403704</li>
-                            <li>
-                        <span class="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-10</em>
-                            </li>
-                            <li class="commentdetail">准时到达，服务专业，态度热情，特别好！</li>
-                            <li class="commentimg">
-
-                            </li>
-
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">北京  朝阳区</li>
-
-                        </ul>
-                    </div>
-
-                    <div class="conmentss">
-                        <img class="touxiang" src="" width="40" height="40">
-                        <ul>
-                            <li>woody3412</li>
-                            <li>
-                        <span class="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-10</em>
-                            </li>
-                            <li class="commentdetail">准时到达，服务专业，态度热情</li>
-                            <li class="commentimg">
-
-                            </li>
-
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">上海  长宁区</li>
-
-                        </ul>
-                    </div>
-
-                    <div class="conmentss">
-                        <img class="touxiang" src="http://q.qlogo.cn/qqapp/1103839060/351C8764A8D1BA61DF851EFAEB58133F/100" width="40" height="40">
-                        <ul>
-                            <li>Anna.L</li>
-                            <li>
-                        <span class="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-10</em>
-                            </li>
-                            <li class="commentdetail">准时到达，服务专业，态度热情</li>
-                            <li class="commentimg">
-
-                            </li>
-
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">北京  朝阳区</li>
-
-                        </ul>
-                    </div>
-
-                    <div class="conmentss">
-                        <img class="touxiang" src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLBibtp9NGCPojmVHMFpN8AGicY2NcIufw7e8c9HibsX5goJbHysbCG4RpRlWG92ZgPKjzWj1CSQeOqmQ/0" width="40" height="40">
-                        <ul>
-                            <li>小雪43</li>
-                            <li>
-                        <span class="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-10</em>
-                            </li>
-                            <li class="commentdetail">准时到达，服务专业，态度热情，按的非常好，就是忘记拍照了，宜生到家就是很专业</li>
-                            <li class="commentimg">
-
-                            </li>
-
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">北京  海淀区</li>
-
-                        </ul>
-                    </div>
-
-                    <div class="conmentss">
-                        <img class="touxiang" src="http://img.daoway.cn/img/2017/07/08/9d88573b-da60-4472-bb08-922009ec7330.jpg" width="40" height="40">
-                        <ul>
-                            <li>A法官</li>
-                            <li>
-                        <span class="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-09</em>
-                            </li>
-                            <li class="commentdetail">不错
-                            </li>
-                            <li class="commentimg">
-
-                                <img src="http://img.daoway.cn/img/userPic/2017/07/09/dcceefb7-fe03-4b95-b0fd-349f364cba04_thumb.jpg" width="60" height="60">
-
-                            </li>
-
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">北京  顺义区</li>
-
-                        </ul>
-                    </div>
-
-                    <div class="conmentss">
-                        <img class="touxiang" src="http://wx.qlogo.cn/mmopen/0LRiarZ0SRGVQX5dZ5jiaaRFAasKnHjawV1lmK14ReNpMDQCwoF0DrpZ1BtZib5raibTTj1kbfs7LRibERye8pBEAkK2XRFkmLX65/0" width="40" height="40">
-                        <ul>
-                            <li>zt5</li>
-                            <li>
-                        <span class="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-09</em>
-                            </li>
-                            <li class="commentdetail">态度热情，服务专业，准时到达，非常好……都快睡着了</li>
-                            <li class="commentimg">
-
-                            </li>
-
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">北京  大兴区</li>
-
-                        </ul>
-                    </div>
-
-                    <div class="conmentss">
-                        <img class="touxiang" src="http://wx.qlogo.cn/mmopen/oqjmvaMlmyfibgPboLbbdcP083JicTDXvOEvkFpLib9e8LrHxmz1aTYKfhibl2xBhFIz2BtQ6WJ10VlrbyLSd56Wo5PlCMib9niaNv/0" width="40" height="40">
-                        <ul>
-                            <li>廉女士</li>
-                            <li>
-                        <span class="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-09</em>
-                            </li>
-                            <li class="commentdetail">准时到达，服务专业，态度热情</li>
-                            <li class="commentimg">
-
-                            </li>
-
-                            <li class="commentposition"><img src="./img//position.jpg" width="9" height="11">北京  西城区</li>
-
-                        </ul>
-                    </div>
-
-                    <div class="conmentss">
-                        <img class="touxiang" src="" width="40" height="40">
-                        <ul>
-                            <li>Smart</li>
-                            <li>
-                        <span class="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-09</em>
-                            </li>
-                            <li class="commentdetail">准时到达</li>
-                            <li class="commentimg">
-
-                            </li>
-
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">北京  西城区</li>
-
-                        </ul>
-                    </div>
-
-                    <div class="conmentss">
-                        <img class="touxiang" src="http://wx.qlogo.cn/mmopen/YXGibMZHGwRBvHCgvm1GKZRHMsxRnZfnOR93B2QRqloup0NY6xrarrc2rwk6OvwAs1hsHbdWfoG1sTSod5h36GbHiaQvbSbEsa/0" width="40" height="40">
-                        <ul>
-                            <li>Little Giant.༉</li>
-                            <li>
-                        <span class="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-09</em>
-                            </li>
-                            <li class="commentdetail">准时到达，服务专业，态度热情</li>
-                            <li class="commentimg">
-
-                            </li>
-
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">深圳  罗湖区</li>
+                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">{{user.address.city}}  {{user.address.area}}</li>
 
                         </ul>
                     </div>

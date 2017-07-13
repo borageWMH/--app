@@ -5,13 +5,12 @@
     background: #fbf8f8;
 }
 .h2 {
-    line-height: 85px;
+    line-height: 97px;
     width: 1200px;
     height: 85px;
-    margin: 0 auto;
+    margin: 15px auto;
     font-size: 18px;
     font-weight: bold;
-    position: relative;
 
 
 }

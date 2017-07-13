@@ -4,19 +4,25 @@
     <!--<base href="http://localhost:63342/app/">-->
     <meta charset="UTF-8">
     <title>daowei</title>
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script type='text/javascript' src='bootstrap.js'></script>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/server.css">
+    <link rel="stylesheet" href="css/detail.css">
     <link rel="stylesheet" href="css/fuwushang.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/register.css">
+
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="css/detail.css">-->
     <!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
-    <script type='text/javascript' src='bootstrap.js'></script>
+
 </head>
 <body ng-app="myApp" ng-controller="MyCtrl">
 <div class="wrapper" >
@@ -36,14 +42,14 @@
                 <li>
                     <a href="javascript:;" id="city">切换城市</a>
                 </li>
-                <li ng-class="{active: isActive('/main')}">
-                    <a href="javascript:;" id="first" ui-sref="main">首页</a>
+                <li>
+                    <a ui-sref-active="active" href="javascript:;" ui-sref="main">首页</a>
                 </li>
                 <li>
                     <a href="javascript:;">下载APP</a>
                 </li>
-                <li ng-class="{active: isActive('/server')}">
-                    <a href="javascript:;" ui-sref="server">服务商
+                <li >
+                    <a ui-sref-active="active" href="javascript:;" ui-sref="server">服务商
                     </a>
                 </li>
                 <li>
@@ -61,7 +67,7 @@
     </div>
 
     <!--中间-->
-    <div ui-view></div>
+    <div ui-view autoscroll></div>
 
     <!--底部-->
     <div class="footer" ng-hide="isLike" >
