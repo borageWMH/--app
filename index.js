@@ -27,8 +27,8 @@ angular.module('myApp',['ui.router'])//创建模块对象
             controller: 'loginCtrl'
             })
             .state('register',{
-                url : '/login',
-                templateUrl : 'html/login.html',
+                url : '/register',
+                templateUrl : 'html/register.html',
                 controller: 'registerCtrl'
             })
 
@@ -43,6 +43,7 @@ angular.module('myApp',['ui.router'])//创建模块对象
         .error(function (error) {
             console.log(error);
         })
+
     $http.get('http://localhost:3000/projects')
         .success(function (projects) {
             console.log(projects);
@@ -57,7 +58,24 @@ angular.module('myApp',['ui.router'])//创建模块对象
         console.log($stateParams);
     $http.get('http://localhost:3000/sellers')
         .success(function (sellers) {
-            console.log(sellers);
+            console.log($stateParams.id1);
+            $scope.index = $stateParams.id1
+            /*得到id  根据不同的id 对应显示下面的内容*/
+            for (var i = 0; i < sellers.length; i++) {
+               if(typeof sellers[i] == "object"){
+                   for (var id in sellers[i]) {
+                       /* console.log(sellers[i].id);
+                        console.log(sellers[i].serviceItem);*/
+                   }
+               }
+                console.log(sellers[i].id);
+                if($stateParams.id1 == sellers[i].id){
+                    alert("hhh")
+                    console.log(sellers[i].serviceItem)
+                    $scope.serviceItems = sellers[i].serviceItem
+                }
+            }
+
             //console.log($stateParams);
            // var index = $stateParams.id -1
             //$scope.seller = sellers[index];
@@ -70,21 +88,34 @@ angular.module('myApp',['ui.router'])//创建模块对象
     .controller('ServerCtrl', ['$scope','$http', function ($scope, $http) {
         $http.get('http://localhost:3000/sellers')
             .success(function (sellers) {
-                console.log(sellers);
+               // console.log(sellers);
                 $scope.sellers = sellers;
             })
             .error(function (error) {
                 console.log(error);
             })
 
+
     }])
-    .controller('loginCtrl',  function ($scope, $http) {
+    .controller('loginCtrl',   ['$scope','$http','$rootScope', function ($scope, $http,$rootScope) {
+        $scope.isLike = true
+        $rootScope.isLike = true;
 
-    })
-    .controller('registerCtrl',  function ($scope, $http) {
+    }])
+    .controller('registerCtrl',  ['$scope','$http','$rootScope' ,function ($scope, $http,$rootScope) {
+        $scope.isLike = true
+        $rootScope.isLike = true;
 
-    })
-    .controller('MyCtrl',  function ($scope, $http) {
+
+    }])
+    .controller('MyCtrl',  function ($scope, $http,$location,$rootScope) {
+        $scope.isLike = false
+        $scope.switch = function () {
+            $scope.isLike = !$scope.isLike
+        }
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
 
 
     })
