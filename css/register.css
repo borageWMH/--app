@@ -1,21 +1,7 @@
-body {
-    padding-top: 50px;
-    height: 100%;
-    min-height: 100%;
-    overflow-x: hidden;
-}
-
-.container4 {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
 .regist, .forgetPwd {
     max-width: 330px;
     padding: 15px;
-    margin: 0 auto;
-    margin-top: 13%;
+    margin: 50px auto;
     border-radius: 5px;
     background: #fff;
     border: 1px #ccc solid;
@@ -50,10 +36,6 @@ input:not([type=radio]):not([type=checkbox]), select {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
 .ng-hide:not(.ng-hide-animate) {
     display: none !important;
-}
-#password2{
-
 }

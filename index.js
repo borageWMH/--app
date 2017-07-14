@@ -34,7 +34,9 @@ angular.module('myApp', ['ui.router'])//创建模块对象
 
         $urlRouterProvider.otherwise('/main');
     }])
-    .controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
+    .controller('MainCtrl', ['$scope', '$http','$rootScope', function ($scope, $http,$rootScope) {
+        $rootScope.isShow = false
+        $rootScope.show = true
         $http.get('http://localhost:3000/sellers')
             .success(function (sellers) {
                 //console.log(sellers[0].serviceItem);
@@ -67,6 +69,8 @@ angular.module('myApp', ['ui.router'])//创建模块对象
     }])
     .controller('FuWUShangCtrl', ['$scope', '$http', '$stateParams', '$rootScope', function ($scope, $http, $stateParams, $rootScope) {
         //console.log($stateParams);
+        $rootScope.isShow = false
+        $rootScope.show = false
         var arr = []
         $http.get('http://localhost:3000/sellers')
             .success(function (data) {
@@ -127,6 +131,8 @@ angular.module('myApp', ['ui.router'])//创建模块对象
             }
     }])
     .controller('DetailCtrl', ['$scope', '$http', '$stateParams', '$rootScope', function ($scope, $http, $stateParams, $rootScope) {
+        $rootScope.isShow = false
+        $rootScope.show = false
         $http.get('http://localhost:3000/sellers')
             .success(function (sellers) {
                 $scope.sellers = sellers;
@@ -177,7 +183,9 @@ angular.module('myApp', ['ui.router'])//创建模块对象
 
 
     }])
-    .controller('ServerCtrl', ['$scope', '$http', function ($scope, $http) {
+    .controller('ServerCtrl', ['$scope', '$http','$rootScope', function ($scope, $http,$rootScope) {
+        $rootScope.isShow = false
+        $rootScope.show = false
         var arr = []
         $http.get('http://localhost:3000/sellers')
             .success(function (data) {
@@ -198,21 +206,18 @@ angular.module('myApp', ['ui.router'])//创建模块对象
     }])
 
     .controller('loginCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
-        $scope.isLike = true
-        $rootScope.isLike = true;
+        console.log($rootScope.isShow);
+       $rootScope.isShow = true
+        $rootScope.show = false
 
     }])
     .controller('registerCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
-        $scope.isLike = true
-        $rootScope.isLike = true;
-
-
+       $rootScope.isShow = true
+        $rootScope.show = false
     }])
     .controller('MyCtrl', function ($scope, $http, $location, $rootScope) {
-        $scope.isLike = false
-        $scope.switch = function () {
-            $scope.isLike = !$scope.isLike
-        }
+        $rootScope.isShow = false
+        $rootScope.show = true
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };

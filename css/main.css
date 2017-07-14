@@ -5,10 +5,9 @@
 .wrapper .bg{
     width: 100%;
     height: 420px;
+    margin-top: 65px;
     position: relative;
-    top: 16px;
-   bottom: 16px;
-
+    margin-bottom: -433px;
 }
 
 #carousel-example-generic .carousel-inner .item{
@@ -22,17 +21,6 @@
 }
 
 
-.banner-nav ul li {
-    height: 42px;
-    line-height: 42px;
-    color: #fff;
-    font-size: 16px;
-    position: relative;
-    font-weight: bold;
-    cursor: pointer;
-    padding-left: 45px;
-}
-
 
 ul, li {
     list-style: none;
@@ -41,17 +29,14 @@ ul, li {
 /*二级菜单*/
 .banner-nav {
     width: 200px;
-    position: relative;
-    bottom: 442px;
     margin: 0 auto;
     z-index: 998;
+
 }
 .banner-nav .ulList{
-   /* width: 180px;
-    !*position: absolute;*!
-    left: -470px;*/
+
     position: relative;
-    top: 20px;
+    top: 8px;
     left: -470px;
 }
 .banner-nav ul {
@@ -65,7 +50,7 @@ ul, li {
     line-height: 42px;
     color: #fff;
     font-size: 16px;
-    /*position: relative;*/
+
     font-weight: bold;
     cursor: pointer;
     padding-left: 45px;
@@ -74,7 +59,6 @@ ul, li {
     display: none;
     position: absolute;
     top: 0px;
-   /* left: 286px;*/
 }
 .banner-nav ul .navname:hover .navname2{
     display: block;
@@ -103,17 +87,15 @@ ul, li {
 
 }
 .banner-nav ul li .act1 {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    vertical-align: middle;
-    border: 0;
+    position: relative;
+    right: -18px;
+    top: -1px;
+
 }
 .banner-nav ul li .act2{
-    position: absolute;
-    left: 173px;
-    top: 16px;
-    z-index: 100;
+    position: relative;
+    left: 128px;
+    bottom: 28px;
     display: none;
 
 }
@@ -188,6 +170,7 @@ a:hover, a:focus {
 .box1 {
     height: 560px;
     width: 100%;
+   /* margin-top: -420px;*/
 }
 
 .navigation {

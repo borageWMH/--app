@@ -4,9 +4,12 @@
 }
 .wrapper{
     width: 100%;
+    position: relative;
 
 }
 .header{
+    margin-bottom: 65px;
+    height: 65px;
     width: 100%;
     border-bottom: 1px solid #dbdbdb;
     position: fixed;

@@ -3,12 +3,13 @@
 .middle1{
     width: 100%;
     background: #fbf8f8;
+    margin-top: 65px;
 }
 .h2 {
     line-height: 97px;
     width: 1200px;
     height: 85px;
-    margin: 15px auto;
+    margin: 0px auto;
     font-size: 18px;
     font-weight: bold;
 

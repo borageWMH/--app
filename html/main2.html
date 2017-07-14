@@ -1,0 +1,72 @@
+
+    <div class="bg">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="500" >
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="img/banner1.jpg" alt="..." >
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/banner2.jpg" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/banner3.jpg" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--二级菜单-->
+       <!-- <div class="banner-nav">
+            <div class="ulList">
+                <ul>
+                    <li class="navname" ng-repeat="project in projects" ng-style="myObj">
+                        <a href="/fuwu?category=20" target="_blank"></a><i>{{project.name}}</i>
+                        <img src="img/right.png" class="act1">
+                        <img src="img/icon1.png" class="act2">
+                        <ul class="navname2" >
+                            <li ng-repeat="project2 in project.projects2">
+                                <a href="#" target="_blank" >{{project2.name}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>-->
+    </div>
+    <div class="box1" ng-repeat="project in projects">
+        <div class="fff">
+            <div class="servicebody">
+                <div class="navigation"><span class="serviceIndex">{{project.name}}</span><span class="serviceType">{{project.detail}}</span>
+                </div>
+                <div class="servicetags">
+                    <div class="tagsListHeader">
+                            <span class="lookMore">
+                                <a href="/fuwu?category=20" style="color: #898989; font-size: 18px">更多服务&gt;</a></span>
+                    </div>
+                    <div class="row">
+                        <a class="form-group shopList" href="/detail" ng-repeat="seller in sellers" id="a1">
+                            <div class="col-md-3 col-xs-6 member-container ServiceBorder">
+                                <img ng-src={{seller.img}} class="serviceImg" width="210px" height="210px">
+                                <div class="serviceName">{{seller.name}}</div>
+                                <div class="description">{{seller.description}}</div>
+                                <div class="price"><span style="font-size: 20px">{{seller.price}}</span>元/小时<span class="btn1">查看详情</span></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
