@@ -8,22 +8,14 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script type='text/javascript' src='./bootstrap.js'></script>
-  <!--  <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="css/main.css">-->
+    <script src="https://cdn.bootcss.com/jquery/1.12.2/jquery.js"></script>
     <link rel="stylesheet" href="./css/index.css">
-
-
-
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <!--<link rel="stylesheet" href="css/detail.css">-->
-    <!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
-
 </head>
 <body ng-app="myApp" ng-controller="MyCtrl">
 <div class="wrapper">
     <!--头部-->
-    <div class="header" ng-hide="isShow">
+    <div class="header" ng-show="isShow" id="header">
         <div class="container">
             <a href="javascript:;" class="c-left">
                 <img src="img/logo.png" alt="" class="logo-img">
@@ -112,7 +104,7 @@
     <div ui-view ></div>
 
     <!--底部-->
-    <div class="footer" ng-hide="isShow" >
+    <div class="footer" ng-show="isShow" >
         <div class="baozhang" id="baozhang">
             <h2>到位<span>服务</span>保障</h2>
             <p>到位平台担保交易安全，交易未成功100%退款</p>

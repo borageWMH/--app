@@ -35,7 +35,6 @@ angular.module('myApp', ['ui.router'])//创建模块对象
         $urlRouterProvider.otherwise('/main');
     }])
     .controller('MainCtrl', ['$scope', '$http','$rootScope', function ($scope, $http,$rootScope) {
-        $rootScope.isShow = false
         $rootScope.show = true
         $http.get('http://localhost:3000/sellers')
             .success(function (sellers) {
@@ -45,6 +44,9 @@ angular.module('myApp', ['ui.router'])//创建模块对象
             .error(function (error) {
                 console.log(error);
             })
+
+
+
 
 
         $http.get('http://localhost:3000/projects')
@@ -69,7 +71,12 @@ angular.module('myApp', ['ui.router'])//创建模块对象
     }])
     .controller('FuWUShangCtrl', ['$scope', '$http', '$stateParams', '$rootScope', function ($scope, $http, $stateParams, $rootScope) {
         //console.log($stateParams);
-        $rootScope.isShow = false
+        if(event.preventDefault){
+            event.preventDefault()
+        }else{
+            event.returnValue = false
+        }
+        $rootScope.isShow = true
         $rootScope.show = false
         var arr = []
         $http.get('http://localhost:3000/sellers')
@@ -131,7 +138,7 @@ angular.module('myApp', ['ui.router'])//创建模块对象
             }
     }])
     .controller('DetailCtrl', ['$scope', '$http', '$stateParams', '$rootScope', function ($scope, $http, $stateParams, $rootScope) {
-        $rootScope.isShow = false
+        $rootScope.isShow = true
         $rootScope.show = false
         $http.get('http://localhost:3000/sellers')
             .success(function (sellers) {
@@ -184,7 +191,7 @@ angular.module('myApp', ['ui.router'])//创建模块对象
 
     }])
     .controller('ServerCtrl', ['$scope', '$http','$rootScope', function ($scope, $http,$rootScope) {
-        $rootScope.isShow = false
+        $rootScope.isShow = true
         $rootScope.show = false
         var arr = []
         $http.get('http://localhost:3000/sellers')
@@ -207,20 +214,29 @@ angular.module('myApp', ['ui.router'])//创建模块对象
 
     .controller('loginCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
         console.log($rootScope.isShow);
-       $rootScope.isShow = true
+       $rootScope.isShow = false
         $rootScope.show = false
 
     }])
     .controller('registerCtrl', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
-       $rootScope.isShow = true
+       $rootScope.isShow = false
         $rootScope.show = false
     }])
     .controller('MyCtrl', function ($scope, $http, $location, $rootScope) {
-        $rootScope.isShow = false
+        $rootScope.isShow = true
         $rootScope.show = true
-        $scope.isActive = function (viewLocation) {
-            return viewLocation === $location.path();
-        };
+        $(window).scroll(function ()
+        {
+            var st = $(this).scrollTop();
+            console.log(st);
+            if(st >10 && st < 200){
+                $('#header').fadeOut()
+            } else if (st == 0){
+                $('#header').fadeIn(1)
+            }else {
+                $('#header').fadeIn(2000)
+            }
+        });
 
 
     })

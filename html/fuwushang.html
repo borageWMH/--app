@@ -20,8 +20,8 @@
         <div class="navtit">
             <ul>
                 <li class="slibingsclor"><a href="javascript:;">服务项目</a></li>
-                <li id="infro"><a href="javascript:;">商家简介</a></li>
-                <li><a href="#profile">用户评论</a></li>
+                <li id="infro"><a href="#simple">商家简介</a></li>
+                <li><a href="#commit">用户评论</a></li>
             </ul>
         </div>
         <div class="service-center content" style="margin-top: 22px">
@@ -31,98 +31,72 @@
                         <i class="activity" style="color: #121212; margin: 0">服务项目</i></span>
                 </h3>
                 <div class="boxtab xianshi">
-
                     <div class="ctop ctopH" style="height: 200px;" ng-repeat="serviceItem in serviceItems" ui-sref="detail({id2:serviceItem.id})">
                         <img class="pic" ng-src={{serviceItem.img}} width="150" height="150">
                         <span class="spm spm2">
                         <i>{{serviceItem.name}}</i>
                         <i style="color: #929292">{{serviceItem.description}}</i>
                         <i class="price"><b style="margin-left: 0">{{serviceItem.price}}<em>元/次</em></b>
-
                             <b class="oldpic" style="display: inline-block; margin-left: 20px">原价<em>{{serviceItem.oldPrice}}</em></b>
-
                         </i>
                         </span>
                         <span class="spf">已售<i>{{serviceItem.sales}}</i></span>
                     </div>
-
-
-
-
-
-
                 </div>
                 <div id="intro2" class="fenye" style="display: block; background: #f8f8f8; height: 70px">
-
                     <span id="morePrice" style="margin: 10px 5px" ng-click="moreProjects()">查看更多项目<img style="margin-left: 5px" src="./img/fuwu_down2.jpg" width="12" height="7"></span>
-
                 </div>
                 <h3 id="intro" style="width: 95%; border: none; border-bottom: 1px solid #e5e5e5; margin-left: 3%">
-                    <span class="paihang"><i class="activity" style="color: #121212; margin: 0">商家简介</i></span>
+                    <span class="paihang"><a class="activity" style="color: #121212; margin: 0" name="simple" id="simple">商家简介</a></span>
                 </h3>
-
-                <div class="company">{{seller.details.rage}}<img src="./img/renzheng.jpg"></div>
-
+                <div class="company">{{seller.details.rage}}
+                    <img src="./img/renzheng.jpg">
+                </div>
                 <p id="profile" class="profile"
                    innertext="宜生到家”是国内领先的互联网+大健康O2O创新企业，以“中医外治法联合调理，个性化管理服务”做为切入点，通过富侨30年积累的品牌影响力及技师团队，宜生到家快速进行渠道资源整合及产品架构完善，不到半年时间将技师团队从不足百人扩充到600余人，研发出中医推拿、足疗spa、小儿推拿三大系列三十余种产品，成为领域内推拿师人数最多、服务品类最多的平台，塑造了上门推拿行业内最高服务标准。">{{seller.details.content}}</p>
                 <div style="width: 100%; border-top: 10px solid #f8f8f8"></div>
                 <h3 style="width: 95%; border: none; border-bottom: 1px solid #e5e5e5; margin-left: 3%;">
-                    <span class="paihang"><i class="activity" style="color: #121212; margin: 0">用户评论</i><em style="color: #121212; margin-left: 15px">({{seller.users.length}}条评论)</em></span>
+                    <span class="paihang">
+                        <i class="activity" style="color: #121212; margin: 0" id="commit" name="commit">用户评论</i>
+                        <em style="color: #121212; margin-left: 15px">({{seller.users.length}}条评论)</em></span>
                 </h3>
                 <div id="commentDiv">
-
                     <div class="conmentss" ng-repeat="user in seller.users">
                         <img class="touxiang" src="" width="40" height="40">
                         <ul>
                             <li>{{user.username}}</li>
                             <li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-                            <!--ng-repeat="score in user.score" -->
-
-                                      <img src="./img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">{{user.time}}</em>
+                                <span id="star" style="width: 70px; margin-left: 0">
+                                    <span class="noColor" style="left: 0">
+                                    <img src="./img/red_star.png" width="10px" height="auto">
+                                    </span>
+                                </span>
+                                <em style="margin-left: 10px">{{user.time}}</em>
                             </li>
                             <li class="commentdetail">{{user.judge}}</li>
-                            <li class="commentimg">
-
+                            <li class="commentimg"></li>
+                            <li class="commentposition">
+                                <img src="./img/position.jpg" width="9" height="11">{{user.address.city}}  {{user.address.area}}
                             </li>
-
-                            <li class="commentposition"><img src="./img/position.jpg" width="9" height="11">{{user.address.city}}  {{user.address.area}}</li>
-
                         </ul>
                     </div>
-
                 </div>
                 <div class="fenye2">
                     <a href="#profile" class="pageup greycolor">&lt;上一页</a>
                     <div id="showPage" style="display: inline-block">
                         <a href="#profile" class="num acv">1</a>
-
                         <a href="#profile" class="num">2</a>
-
                         <a href="#profile" class="num">3</a>
-
                         <a href="#profile" class="num">4</a>
-
                         <a href="#profile" class="num">5</a>
-
                         <a href="#profile" class="num">6</a>
-
                         <a href="#profile" class="num">7</a>
-
                         <a href="#profile" class="num">8</a>
-
                         <a href="#profile" class="num">9</a>
-
                         <a href="#profile" class="num">10</a>
-
-                        ...
-
                     </div>
                     <a href="#profile" class="pagedown ">下一页&gt;</a>
                 </div>
-
             </div>
             <div class="centerright" style="position: relative; margin-left: 0">
                 <div class="rightct" style="border: none;">
